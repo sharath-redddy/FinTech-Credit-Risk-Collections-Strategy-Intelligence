@@ -61,12 +61,12 @@ def add_customer_features(df: pd.DataFrame) -> pd.DataFrame:
     df = df.merge(customer_features, on="customer_id", how="left")
     df["loan_to_income_ratio"] = df["principal_amount"] / df["monthly_income"].clip(lower=1)
     return df
-def assign_model_risk_band(probability: float) -> str:
-    if probability >= 0.55:
+def assign_model_risk_band(probability: float, critical_threshold: float, high_threshold: float, medium_threshold: float) -> str:
+    if probability >= critical_threshold:
         return "Critical"
-    if probability >= 0.35:
+    if probability >= high_threshold:
         return "High"
-    if probability >= 0.16:
+    if probability >= medium_threshold:
         return "Medium"
     return "Low"
 def train_model() -> None:
@@ -173,7 +173,17 @@ def train_model() -> None:
         ]
     ].copy()
     predictions["predicted_default_probability"] = np.round(all_probabilities, 4)
-    predictions["model_risk_band"] = predictions["predicted_default_probability"].apply(assign_model_risk_band)
+    critical_threshold = predictions["predicted_default_probability"].quantile(0.88)
+    high_threshold = predictions["predicted_default_probability"].quantile(0.65)
+    medium_threshold = predictions["predicted_default_probability"].quantile(0.30)
+    predictions["model_risk_band"] = predictions["predicted_default_probability"].apply(
+        lambda probability: assign_model_risk_band(
+            probability,
+            critical_threshold,
+            high_threshold,
+            medium_threshold,
+        )
+    )
     predictions["loss_given_default"] = np.where(
         predictions["write_off_flag"] == 1,
         0.85,
