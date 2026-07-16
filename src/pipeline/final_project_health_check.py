@@ -182,11 +182,30 @@ def check_model_metrics(failures: list[str]) -> None:
         fail_check("Model metrics file missing", failures)
         return
     metrics = pd.read_csv(metrics_path)
-    if "roc_auc" not in metrics.columns:
-        fail_check("roc_auc column missing from model metrics", failures)
+    roc_auc = None
+    recall = None
+    if "roc_auc" in metrics.columns:
+        roc_auc = float(metrics.loc[0, "roc_auc"])
+    if "recall" in metrics.columns:
+        recall = float(metrics.loc[0, "recall"])
+    if roc_auc is None and {"metric", "value"}.issubset(metrics.columns):
+        metric_lookup = dict(zip(metrics["metric"], metrics["value"]))
+        if "roc_auc" in metric_lookup:
+            roc_auc = float(metric_lookup["roc_auc"])
+        if "recall" in metric_lookup:
+            recall = float(metric_lookup["recall"])
+    if roc_auc is None and {"Metric", "Value"}.issubset(metrics.columns):
+        metric_lookup = dict(zip(metrics["Metric"], metrics["Value"]))
+        if "roc_auc" in metric_lookup:
+            roc_auc = float(metric_lookup["roc_auc"])
+        if "recall" in metric_lookup:
+            recall = float(metric_lookup["recall"])
+    if roc_auc is None:
+        fail_check("Could not read roc_auc from model metrics", failures)
         return
-    roc_auc = float(metrics.loc[0, "roc_auc"])
-    recall = float(metrics.loc[0, "recall"])
+    if recall is None:
+        fail_check("Could not read recall from model metrics", failures)
+        return
     if roc_auc >= 0.70:
         pass_check(f"ROC-AUC is strong enough for portfolio project: {roc_auc:.4f}")
     else:
