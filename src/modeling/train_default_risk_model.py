@@ -62,11 +62,11 @@ def add_customer_features(df: pd.DataFrame) -> pd.DataFrame:
     df["loan_to_income_ratio"] = df["principal_amount"] / df["monthly_income"].clip(lower=1)
     return df
 def assign_model_risk_band(probability: float) -> str:
-    if probability >= 0.35:
+    if probability >= 0.55:
         return "Critical"
-    if probability >= 0.20:
+    if probability >= 0.35:
         return "High"
-    if probability >= 0.09:
+    if probability >= 0.16:
         return "Medium"
     return "Low"
 def train_model() -> None:
