@@ -1,0 +1,17 @@
+pandas
+numpy
+faker
+scikit-learn
+scipy
+matplotlib
+plotly
+streamlit
+google-cloud-bigquery
+google-auth
+google-auth-oauthlib
+pyarrow
+db-dtypes
+python-dotenv
+openpyxl
+jupyter
+ipykernel
