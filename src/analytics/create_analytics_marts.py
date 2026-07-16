@@ -167,6 +167,7 @@ def create_collections_work_queue(loan_risk_mart, collections):
     fill_cols = ["total_contact_attempts", "total_recovered_amount", "promise_to_pay_count", "last_contact_attempt_number"]
     for col in fill_cols:
         queue[col] = queue[col].fillna(0)
+    queue["last_action_date"] = queue["last_action_date"].fillna("No Prior Contact")
     queue = queue[
         (queue["loan_status"].isin(["Active", "Defaulted"]))
         & (queue["days_past_due"] > 0)
