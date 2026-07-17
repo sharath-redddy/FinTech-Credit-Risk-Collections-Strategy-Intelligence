@@ -24,7 +24,7 @@ CrediSphere Finance wants to answer:
 - Created credit policy simulation scenarios
 - Added BigQuery warehouse SQL scripts
 - Built a Streamlit Credit Risk Strategy Assistant
-- Prepared final marts for a Power BI executive dashboard
+- Built a completed Power BI executive dashboard
 ## Dataset Scale
 | Dataset | Approximate Size |
 |---|---:|
@@ -45,7 +45,7 @@ CrediSphere Finance wants to answer:
 - Google BigQuery
 - Streamlit
 - Git and GitHub
-- Power BI, planned as the final executive dashboard layer
+- Power BI
 ## Repository Structure
 FinTech-Credit-Risk-Collections-Strategy-Intelligence/
 - data/
@@ -202,6 +202,21 @@ Completed:
 - GitHub setup
 Pending:
 - Final Power BI executive dashboard
+## Final Deliverables Included
+This repository now includes:
+- Source code
+- Synthetic raw data
+- Cleaned processed data
+- Analytics marts
+- Validation reports
+- Model metrics
+- Trained default-risk model
+- Streamlit strategy assistant
+- BigQuery SQL scripts
+- Completed Power BI dashboard file
+Power BI dashboard file:
+    powerbi/CrediSphere_Credit_Risk_Dashboard.pbix
 ## Disclaimer
 This project uses synthetic data for portfolio and learning purposes.
 It does not represent real customers, real loan decisions, real credit policies, or real lending outcomes.
+
