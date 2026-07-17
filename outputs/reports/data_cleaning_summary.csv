@@ -1,0 +1,9 @@
+table_name,raw_rows,clean_rows,rows_removed,remaining_missing_values
+customers,25000,25000,0,0
+loan_applications,35000,35000,0,13307
+loans,21693,21693,0,15423
+repayment_transactions,114226,113998,228,23994
+delinquency_snapshots,129726,129726,0,0
+collections_actions,75578,75578,0,0
+credit_policy_simulations,8,8,0,0
+daily_portfolio_metrics,912,912,0,0

@@ -1,0 +1,6 @@
+mart_file,rows,columns,missing_values
+mart_loan_risk_base.csv,21693,45,0
+mart_collections_work_queue.csv,5780,53,0
+mart_roll_rate_monthly.csv,427,6,0
+mart_vintage_analysis.csv,465,10,0
+mart_segment_performance.csv,37,13,0

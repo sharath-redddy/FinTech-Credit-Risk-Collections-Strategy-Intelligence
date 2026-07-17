@@ -1,0 +1,9 @@
+table_name,rows,columns,total_null_values,allowed_business_nulls,problem_null_values,status
+customers,25000,14,0,0,0,PASS
+loan_applications,35000,14,13307,13307,0,PASS
+loans,21693,14,15423,15423,0,PASS
+repayment_transactions,113998,9,23994,23994,0,PASS
+delinquency_snapshots,129726,10,0,0,0,PASS
+collections_actions,75578,11,0,0,0,PASS
+credit_policy_simulations,8,10,0,0,0,PASS
+daily_portfolio_metrics,912,13,0,0,0,PASS

@@ -1,0 +1,9 @@
+table_name,raw_rows,clean_rows,rows_removed,raw_missing_values,clean_missing_values,duplicate_primary_keys_removed,status,business_valid_nulls_excluded,problem_missing_values,corrected_status
+customers,25000,25000,0,325,0,0,PASS,True,0,PASS
+loan_applications,35000,35000,0,48527,13307,0,PASS,True,0,PASS
+loans,21693,21693,0,15486,15423,0,PASS,True,0,PASS
+repayment_transactions,114226,113998,228,48431,23994,228,PASS,True,0,PASS
+delinquency_snapshots,129726,129726,0,0,0,0,PASS,True,0,PASS
+collections_actions,75578,75578,0,227,0,0,PASS,True,0,PASS
+credit_policy_simulations,8,8,0,0,0,0,PASS,True,0,PASS
+daily_portfolio_metrics,912,912,0,0,0,0,PASS,True,0,PASS

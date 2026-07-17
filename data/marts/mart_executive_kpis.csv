@@ -1,0 +1,2 @@
+metric_date,total_loans,active_loans,total_portfolio_outstanding,default_rate,write_off_rate,par30_rate,par60_rate,par90_rate,expected_credit_loss,latest_collection_amount,latest_recovery_rate,critical_risk_loans,high_value_risk_loans,executive_recommendation
+2026-06-30,21693,15165,1137921101.95,0.1196,0.0119,0.2657,0.1965,0.1541,228867250.86,1154501.31,0.0019,2121,1961,"Tighten monitoring on Critical and High risk loans, prioritize high-ECL collections, and use Balanced Risk-Return Policy for new originations."

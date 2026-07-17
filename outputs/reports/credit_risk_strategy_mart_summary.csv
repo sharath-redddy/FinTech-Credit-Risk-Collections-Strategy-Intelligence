@@ -1,0 +1,4 @@
+file_name,rows,columns,missing_values
+mart_credit_risk_strategy.csv,21693,56,0
+mart_executive_kpis.csv,1,15,0
+mart_risk_alerts.csv,4,10,0

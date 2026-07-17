@@ -1,0 +1,9 @@
+simulation_id,policy_name,minimum_credit_score,maximum_debt_to_income_ratio,maximum_loan_to_income_ratio,predicted_approval_rate,predicted_default_rate,expected_credit_loss,projected_revenue,policy_recommendation
+SIM0001,Very Conservative Policy,720,0.38,3.0,0.0609,0.033,3322858.85,17792637.94,Safe but restrictive: consider relaxing slightly
+SIM0002,Conservative Policy,690,0.42,3.8,0.1738,0.0493,17499351.34,75546991.68,Safe but restrictive: consider relaxing slightly
+SIM0003,Balanced Risk-Return Policy,650,0.5,5.0,0.4087,0.0862,91979789.05,282277515.49,Recommended: strong risk-return balance
+SIM0004,Current-Like Growth Policy,620,0.58,6.5,0.6145,0.112,206795725.09,552188021.91,Monitor: acceptable but needs segment-level controls
+SIM0005,Growth Expansion Policy,590,0.66,8.0,0.7701,0.1309,302560589.12,721256226.6,Monitor: acceptable but needs segment-level controls
+SIM0006,Aggressive Growth Policy,560,0.74,10.0,0.8801,0.1455,370233373.72,804953824.84,Monitor: acceptable but needs segment-level controls
+SIM0007,Thin-File Inclusion Policy,540,0.6,4.5,0.6259,0.1217,157339717.6,350729741.38,Monitor: acceptable but needs segment-level controls
+SIM0008,High-Income Flexible Policy,600,0.7,7.5,0.767,0.1315,301295562.67,710424312.78,Monitor: acceptable but needs segment-level controls

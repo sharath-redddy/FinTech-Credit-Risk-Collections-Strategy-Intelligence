@@ -1,0 +1,81 @@
+area,check_name,status,observed_value,expectation
+customers,required_columns_present,PASS,None missing,All required columns should exist
+loan_applications,required_columns_present,PASS,None missing,All required columns should exist
+loans,required_columns_present,PASS,None missing,All required columns should exist
+repayment_transactions,required_columns_present,PASS,None missing,All required columns should exist
+delinquency_snapshots,required_columns_present,PASS,None missing,All required columns should exist
+collections_actions,required_columns_present,PASS,None missing,All required columns should exist
+credit_policy_simulations,required_columns_present,PASS,None missing,All required columns should exist
+daily_portfolio_metrics,required_columns_present,PASS,None missing,All required columns should exist
+customers,row_count,PASS,25000,"Exactly 25,000 rows"
+loan_applications,row_count,PASS,35000,"Exactly 35,000 rows"
+loans,approved_loan_count,PASS,21693,"At least 20,000 approved loans"
+repayment_transactions,minimum_repayment_records,PASS,114226,Repayment rows should exceed loan rows
+delinquency_snapshots,minimum_snapshot_records,PASS,129726,Snapshot rows should exceed loan rows
+credit_policy_simulations,scenario_count,PASS,8,At least 5 policy scenarios
+daily_portfolio_metrics,daily_metric_rows,PASS,912,At least 900 daily metric rows
+customers,duplicate_customer_id,PASS,0,Primary key should be unique
+loan_applications,duplicate_application_id,PASS,0,Primary key should be unique
+loans,duplicate_loan_id,PASS,0,Primary key should be unique
+repayment_transactions,duplicate_repayment_id,WARN,228,Duplicates are intentionally allowed in raw data for cleaning practice
+collections_actions,duplicate_action_id,PASS,0,Primary key should be unique
+credit_policy_simulations,duplicate_simulation_id,PASS,0,Primary key should be unique
+daily_portfolio_metrics,duplicate_metric_date,PASS,0,Primary key should be unique
+loan_applications,foreign_key_customer_id,PASS,0,All values should exist in customers.customer_id
+loans,foreign_key_application_id,PASS,0,All values should exist in loan_applications.application_id
+loans,foreign_key_customer_id,PASS,0,All values should exist in customers.customer_id
+repayment_transactions,foreign_key_loan_id,PASS,0,All values should exist in loans.loan_id
+delinquency_snapshots,foreign_key_loan_id,PASS,0,All values should exist in loans.loan_id
+delinquency_snapshots,foreign_key_customer_id,PASS,0,All values should exist in customers.customer_id
+collections_actions,foreign_key_loan_id,PASS,0,All values should exist in loans.loan_id
+collections_actions,foreign_key_customer_id,PASS,0,All values should exist in customers.customer_id
+customers,total_missing_values,WARN,325,"Raw data may include realistic missing values, but critical IDs must not be missing"
+customers,critical_null_customer_id,PASS,0,Critical ID/date/status fields should not be missing
+loan_applications,total_missing_values,WARN,48527,"Raw data may include realistic missing values, but critical IDs must not be missing"
+loan_applications,critical_null_application_id,PASS,0,Critical ID/date/status fields should not be missing
+loan_applications,critical_null_customer_id,PASS,0,Critical ID/date/status fields should not be missing
+loan_applications,critical_null_application_date,PASS,0,Critical ID/date/status fields should not be missing
+loan_applications,critical_null_approval_status,PASS,0,Critical ID/date/status fields should not be missing
+loans,total_missing_values,WARN,15486,"Raw data may include realistic missing values, but critical IDs must not be missing"
+loans,critical_null_loan_id,PASS,0,Critical ID/date/status fields should not be missing
+loans,critical_null_application_id,PASS,0,Critical ID/date/status fields should not be missing
+loans,critical_null_customer_id,PASS,0,Critical ID/date/status fields should not be missing
+loans,critical_null_disbursement_date,PASS,0,Critical ID/date/status fields should not be missing
+repayment_transactions,total_missing_values,WARN,48431,"Raw data may include realistic missing values, but critical IDs must not be missing"
+repayment_transactions,critical_null_repayment_id,PASS,0,Critical ID/date/status fields should not be missing
+repayment_transactions,critical_null_loan_id,PASS,0,Critical ID/date/status fields should not be missing
+repayment_transactions,critical_null_due_date,PASS,0,Critical ID/date/status fields should not be missing
+delinquency_snapshots,total_missing_values,PASS,0,"Raw data may include realistic missing values, but critical IDs must not be missing"
+delinquency_snapshots,critical_null_snapshot_date,PASS,0,Critical ID/date/status fields should not be missing
+delinquency_snapshots,critical_null_loan_id,PASS,0,Critical ID/date/status fields should not be missing
+delinquency_snapshots,critical_null_customer_id,PASS,0,Critical ID/date/status fields should not be missing
+collections_actions,total_missing_values,WARN,227,"Raw data may include realistic missing values, but critical IDs must not be missing"
+collections_actions,critical_null_action_id,PASS,0,Critical ID/date/status fields should not be missing
+collections_actions,critical_null_loan_id,PASS,0,Critical ID/date/status fields should not be missing
+collections_actions,critical_null_customer_id,PASS,0,Critical ID/date/status fields should not be missing
+collections_actions,critical_null_action_date,PASS,0,Critical ID/date/status fields should not be missing
+credit_policy_simulations,total_missing_values,PASS,0,"Raw data may include realistic missing values, but critical IDs must not be missing"
+credit_policy_simulations,critical_null_simulation_id,PASS,0,Critical ID/date/status fields should not be missing
+credit_policy_simulations,critical_null_policy_name,PASS,0,Critical ID/date/status fields should not be missing
+daily_portfolio_metrics,total_missing_values,PASS,0,"Raw data may include realistic missing values, but critical IDs must not be missing"
+daily_portfolio_metrics,critical_null_metric_date,PASS,0,Critical ID/date/status fields should not be missing
+customers,customer_since_date_parseable,PASS,0,Date column should be parseable
+customers,customer_since_date_range,PASS,2024-01-01 to 2026-06-30,Date range should be business-realistic
+loan_applications,application_date_parseable,PASS,0,Date column should be parseable
+loan_applications,application_date_range,PASS,2024-01-04 to 2026-06-30,Date range should be business-realistic
+loans,disbursement_date_parseable,PASS,0,Date column should be parseable
+loans,disbursement_date_range,PASS,2024-01-07 to 2026-07-03,Date range should be business-realistic
+repayment_transactions,due_date_parseable,PASS,0,Date column should be parseable
+repayment_transactions,due_date_range,PASS,2024-02-07 to 2029-01-25,Date range should be business-realistic
+delinquency_snapshots,snapshot_date_parseable,PASS,0,Date column should be parseable
+delinquency_snapshots,snapshot_date_range,PASS,2024-01-31 to 2026-06-30,Date range should be business-realistic
+collections_actions,action_date_parseable,PASS,0,Date column should be parseable
+collections_actions,action_date_range,PASS,2024-01-07 to 2026-06-30,Date range should be business-realistic
+daily_portfolio_metrics,metric_date_parseable,PASS,0,Date column should be parseable
+daily_portfolio_metrics,metric_date_range,PASS,2024-01-01 to 2026-06-30,Date range should be business-realistic
+loans,loans_match_approved_applications,PASS,"loans=21693, approved_applications=21693",Each approved application should create one loan
+repayment_transactions,all_loans_have_repayments,PASS,21693 of 21693,Every loan should have repayment records
+delinquency_snapshots,all_loans_have_snapshots,PASS,21693 of 21693,Every loan should have delinquency snapshots
+repayment_transactions,negative_paid_amounts,PASS,0,Paid amount should not be negative
+loans,negative_current_outstanding,PASS,0,Outstanding balance should not be negative
+loans,negative_days_past_due,PASS,0,Days past due should not be negative

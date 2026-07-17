@@ -1,0 +1,5 @@
+alert_id,alert_type,severity,alert_message,segment_type,segment_value,loans_impacted,exposure_amount,expected_credit_loss,recommended_action
+ALERT001,Regional ECL Concentration,High,Maharashtra has the highest expected credit loss exposure.,state,Maharashtra,2218,176731136.11,33590880.86,Review underwriting and collections strategy for this state.
+ALERT002,Product Delinquency Risk,Medium,Business Micro-loan has the highest PAR30 rate.,loan_product,Business Micro-loan,1072,137475565.64,42931843.56,Monitor early delinquency and adjust product-level approval controls.
+ALERT003,Critical Risk Loan Pool,Critical,Critical model-risk loans require immediate monitoring and collections prioritization.,model_risk_band,Critical,2121,120080479.43,51075186.38,Prioritize top expected-loss loans in the collections work queue.
+ALERT004,High-Value Risk Exposure,High,High-value risky loans create concentrated loss exposure.,high_value_risk_flag,High Value Risk,1961,276294569.8,90737754.94,Create a senior collections queue for high-balance high-risk loans.
